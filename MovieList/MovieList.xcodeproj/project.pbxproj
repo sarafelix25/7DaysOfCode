@@ -13,6 +13,8 @@
 		9B3DF89329870457005EBBEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3DF89229870457005EBBEB /* Assets.xcassets */; };
 		9B3DF89629870457005EBBEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3DF89429870457005EBBEB /* LaunchScreen.storyboard */; };
 		9B3DF8A02987156A005EBBEB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF89F2987156A005EBBEB /* Model.swift */; };
+		9B3DF8A329871759005EBBEB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF8A229871759005EBBEB /* UIView+.swift */; };
+		9B3DF8A52987176C005EBBEB /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF8A42987176C005EBBEB /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9B3DF89529870457005EBBEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3DF89729870457005EBBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B3DF89F2987156A005EBBEB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9B3DF8A229871759005EBBEB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		9B3DF8A42987176C005EBBEB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,11 @@
 		9B3DF88829870454005EBBEB /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				9B3DF8A12987173C005EBBEB /* Extensions */,
 				9B3DF89E2987148E005EBBEB /* Model */,
 				9B3DF89D29871487005EBBEB /* View */,
 				9B3DF88929870454005EBBEB /* AppDelegate.swift */,
 				9B3DF88B29870454005EBBEB /* SceneDelegate.swift */,
-				9B3DF88D29870454005EBBEB /* HomeViewController.swift */,
 				9B3DF89229870457005EBBEB /* Assets.xcassets */,
 				9B3DF89429870457005EBBEB /* LaunchScreen.storyboard */,
 				9B3DF89729870457005EBBEB /* Info.plist */,
@@ -71,6 +75,7 @@
 		9B3DF89D29871487005EBBEB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B3DF88D29870454005EBBEB /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -81,6 +86,15 @@
 				9B3DF89F2987156A005EBBEB /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9B3DF8A12987173C005EBBEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B3DF8A229871759005EBBEB /* UIView+.swift */,
+				9B3DF8A42987176C005EBBEB /* UIColor+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,8 +169,10 @@
 			files = (
 				9B3DF88E29870454005EBBEB /* HomeViewController.swift in Sources */,
 				9B3DF88A29870454005EBBEB /* AppDelegate.swift in Sources */,
+				9B3DF8A329871759005EBBEB /* UIView+.swift in Sources */,
 				9B3DF88C29870454005EBBEB /* SceneDelegate.swift in Sources */,
 				9B3DF8A02987156A005EBBEB /* Model.swift in Sources */,
+				9B3DF8A52987176C005EBBEB /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
