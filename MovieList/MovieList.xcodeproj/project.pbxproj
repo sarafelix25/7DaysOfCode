@@ -17,6 +17,8 @@
 		9B3DF8A52987176C005EBBEB /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF8A42987176C005EBBEB /* UIColor+.swift */; };
 		9B3DF8A729871C56005EBBEB /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF8A629871C56005EBBEB /* MovieTableViewCell.swift */; };
 		9B3DF8A929871E1B005EBBEB /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF8A829871E1B005EBBEB /* String+.swift */; };
+		9B3DF8AC2987252A005EBBEB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF8AB2987252A005EBBEB /* Network.swift */; };
+		9B3DF8AF29872DD6005EBBEB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3DF8AE29872DD6005EBBEB /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		9B3DF8A42987176C005EBBEB /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		9B3DF8A629871C56005EBBEB /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		9B3DF8A829871E1B005EBBEB /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		9B3DF8AB2987252A005EBBEB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3DF8AF29872DD6005EBBEB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,7 @@
 		9B3DF88829870454005EBBEB /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				9B3DF8AA2987251E005EBBEB /* Services */,
 				9B3DF8A12987173C005EBBEB /* Extensions */,
 				9B3DF89E2987148E005EBBEB /* Model */,
 				9B3DF89D29871487005EBBEB /* View */,
@@ -103,6 +108,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9B3DF8AA2987251E005EBBEB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B3DF8AB2987252A005EBBEB /* Network.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +132,9 @@
 			dependencies = (
 			);
 			name = MovieList;
+			packageProductDependencies = (
+				9B3DF8AE29872DD6005EBBEB /* Kingfisher */,
+			);
 			productName = MovieList;
 			productReference = 9B3DF88629870454005EBBEB /* MovieList.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +163,9 @@
 				Base,
 			);
 			mainGroup = 9B3DF87D29870454005EBBEB;
+			packageReferences = (
+				9B3DF8AD29872DD6005EBBEB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 9B3DF88729870454005EBBEB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -178,6 +197,7 @@
 				9B3DF8A929871E1B005EBBEB /* String+.swift in Sources */,
 				9B3DF8A729871C56005EBBEB /* MovieTableViewCell.swift in Sources */,
 				9B3DF8A329871759005EBBEB /* UIView+.swift in Sources */,
+				9B3DF8AC2987252A005EBBEB /* Network.swift in Sources */,
 				9B3DF88C29870454005EBBEB /* SceneDelegate.swift in Sources */,
 				9B3DF8A02987156A005EBBEB /* Model.swift in Sources */,
 				9B3DF8A52987176C005EBBEB /* UIColor+.swift in Sources */,
@@ -388,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B3DF8AD29872DD6005EBBEB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B3DF8AE29872DD6005EBBEB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3DF8AD29872DD6005EBBEB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B3DF87E29870454005EBBEB /* Project object */;
 }
