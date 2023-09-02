@@ -7,11 +7,11 @@
 
 import UIKit
 
-class Network {
+class Network : UIImageView {
     static let shared = Network()
     
     func fetchPopularMovies(_ completion: @escaping ([Movie]) -> ()) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d8b5cf6c67f7e8e12cd083267f095929") else { return }
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=d8b5cf6c67f7e8e12cd083267f095929&language=pt-BR&page=1") else { return }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 return

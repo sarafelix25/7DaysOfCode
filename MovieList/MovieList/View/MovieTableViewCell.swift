@@ -8,7 +8,7 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -17,14 +17,14 @@ class MovieTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private lazy var releaseDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white.withAlphaComponent(0.75)
         return label
     }()
-
+    
     private lazy var imagePoster: UIImageView = {
         let imgView = UIImageView()
         imgView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +33,7 @@ class MovieTableViewCell: UITableViewCell {
         imgView.backgroundColor = .red
         return imgView
     }()
-
+    
     private lazy var textStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +45,7 @@ class MovieTableViewCell: UITableViewCell {
         stack.spacing = 8
         return stack
     }()
-
+    
     private lazy var mainStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -58,30 +58,42 @@ class MovieTableViewCell: UITableViewCell {
         stack.alignment = .center
         return stack
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setLayout()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
     func configureCell(movie: Movie) {
         setConstraints()
         titleLabel.text = movie.title
-        releaseDateLabel.text = "Lançamento: \(movie.releaseDate.formatDate())"
+        releaseDateLabel.text = "Lançamento: \(movie.release_date.formatDate())"
+        setImage(from: movie.poster_path, imageView: imagePoster)
     }
-
+    
+    func setImage(from url: String, imageView: UIImageView) {
+        guard let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(url)") else {return}
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else {return}
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }
+    }
+    
     private func setLayout() {
         backgroundColor = .clear
     }
-
+    
     private func setConstraints() {
         addSubview(mainStackView)
         NSLayoutConstraint.activate([
@@ -89,7 +101,7 @@ class MovieTableViewCell: UITableViewCell {
             mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16.0),
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.0),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.0),
-
+            
             imagePoster.widthAnchor.constraint(equalToConstant: 90),
             imagePoster.heightAnchor.constraint(equalToConstant: 120),
         ])
