@@ -45,10 +45,11 @@ class HomeViewController: UIViewController {
     }
     
     private func getPopularMovies() {
-        requestNetworking.fetchPopularMovies { movies in
-            self.movies = movies
+        requestNetworking.fetchPopularMovies { [weak self] movies in
+            self?.movies = movies
         }
     }
+    
     private func setLayout() {
         view.addSubview(titleView)
         view.addSubview(tableView)
@@ -88,5 +89,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailsVC = MovieDetailViewController(movie: movies[indexPath.row])
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }

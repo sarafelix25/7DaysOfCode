@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891423C22AA4E49F00F7D678 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891423C12AA4E49E00F7D678 /* MovieDetailViewController.swift */; };
 		9B3DF88A29870454005EBBEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF88929870454005EBBEB /* AppDelegate.swift */; };
 		9B3DF88C29870454005EBBEB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF88B29870454005EBBEB /* SceneDelegate.swift */; };
 		9B3DF88E29870454005EBBEB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DF88D29870454005EBBEB /* HomeViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891423C12AA4E49E00F7D678 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		9B3DF88629870454005EBBEB /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3DF88929870454005EBBEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3DF88B29870454005EBBEB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				9B3DF88D29870454005EBBEB /* HomeViewController.swift */,
 				9B3DF8A629871C56005EBBEB /* MovieTableViewCell.swift */,
+				891423C12AA4E49E00F7D678 /* MovieDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				9B3DF8A729871C56005EBBEB /* MovieTableViewCell.swift in Sources */,
 				9B3DF8A329871759005EBBEB /* UIView+.swift in Sources */,
 				9B3DF8AC2987252A005EBBEB /* Network.swift in Sources */,
+				891423C22AA4E49F00F7D678 /* MovieDetailViewController.swift in Sources */,
 				9B3DF88C29870454005EBBEB /* SceneDelegate.swift in Sources */,
 				9B3DF8A02987156A005EBBEB /* Model.swift in Sources */,
 				9B3DF8A52987176C005EBBEB /* UIColor+.swift in Sources */,

@@ -79,17 +79,6 @@ class MovieTableViewCell: UITableViewCell {
         setImage(from: movie.poster_path, imageView: imagePoster)
     }
     
-    func setImage(from url: String, imageView: UIImageView) {
-        guard let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(url)") else {return}
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else {return}
-            let image = UIImage(data: imageData)
-            DispatchQueue.main.async {
-                imageView.image = image
-            }
-        }
-    }
-    
     private func setLayout() {
         backgroundColor = .clear
     }
@@ -105,5 +94,18 @@ class MovieTableViewCell: UITableViewCell {
             imagePoster.widthAnchor.constraint(equalToConstant: 90),
             imagePoster.heightAnchor.constraint(equalToConstant: 120),
         ])
+    }
+}
+
+extension MovieTableViewCell {
+    func setImage(from url: String, imageView: UIImageView) {
+        guard let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(url)") else {return}
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else {return}
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }
     }
 }
